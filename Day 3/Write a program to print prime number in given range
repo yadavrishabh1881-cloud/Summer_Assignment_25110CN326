@@ -1,0 +1,25 @@
+    #include<stdio.h>
+    int main() {
+    int max , min , isprime ;
+    printf("Enter the Starting number :");
+    scanf("%d", &min  );
+    printf("Enter the Ending number :");
+    scanf("%d", &max);
+    for ( int i = min ; i<=max ; i++)
+    {  if(i<=1){
+        continue ;
+    }
+    isprime=1;
+    for( int j = 2 ; j<=i/2; j++){
+        if(i%j==0) {
+            isprime=0;
+            break;
+        }
+    }
+    if (isprime== 1 ){
+        printf("%d\n",i);
+    }
+    }
+    printf("\n");
+    return 0;
+}
