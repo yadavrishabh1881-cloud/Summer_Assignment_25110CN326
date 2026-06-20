@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+    int i, j, n, count;
+    int checked[100] = {0};
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for (n = 0; str[n] != '\0'; n++)
+        ;
+
+    for (i = 0; i < n; i++)
+    {
+        if (checked[i] == 0)
+        {
+            count = 1;
+            for (j = i + 1; j < n; j++)
+            {
+                if (str[i] == str[j])
+                {
+                    count++;
+                    checked[j] = 1;
+                }
+            }
+            printf("%c occurs %d times\n", str[i], count);
+        }
+    }
+
+    return 0;
+}
