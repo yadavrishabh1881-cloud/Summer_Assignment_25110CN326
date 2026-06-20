@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, num, actual_sum = 0, expected_sum;
+
+    printf("Enter n (numbers should be from 1 to n): ");
+    scanf("%d", &n);
+
+    int arr[50];
+
+    printf("Enter %d numbers (one number from 1 to %d is missing):\n", n - 1, n);
+    for (i = 0; i < n - 1; i++)
+    {
+        scanf("%d", &arr[i]);
+        actual_sum = actual_sum + arr[i];
+    }
+
+    expected_sum = n * (n + 1) / 2;
+
+    num = expected_sum - actual_sum;
+
+    printf("Missing number is %d\n", num);
+
+    return 0;
+}
